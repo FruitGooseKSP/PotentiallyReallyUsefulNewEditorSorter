@@ -6,7 +6,14 @@ using UnityEngine;
 
 namespace PotentiallyReallyUsefulNewEditorSorter
 {
-    public class PRUNES
+    [KSPAddon(KSPAddon.Startup.EditorAny, false)]
+    public class PRUNES : MonoBehaviour
     {
+
+        public void Start()
+        {
+            KSP.UI.Screens.PartCategorizer.Instance.editorPartList.partListSorter.ClickButton(3);
+        }
+
     }
 }
